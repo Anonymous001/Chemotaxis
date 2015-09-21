@@ -1,4 +1,4 @@
- Bacteria bob;
+Bacteria bob;
  //declare bacteria variables here   
  void setup()   
  {     
@@ -16,7 +16,7 @@
  class Bacteria    
  {     
    //lots of java!
-   int myX, myY;
+   float myX, myY, a, b;
    Bacteria()
    {
      myX = 250;
@@ -24,8 +24,31 @@
    }
    void walk()
    {
-     myX = myX+(int)(Math.random()*7)-3;
-     myY = myY+(int)(Math.random()*7)-3;
+     if(mousePressed){
+         ellipse(mouseX,mouseY,10,10);
+         if(mouseX < myX)
+         {
+           a = 3.5;
+         }
+         else
+         {
+           a = 2.5;
+         }
+         if(mouseY < myY)
+         {
+           b = 3.5;
+         }
+         else
+         {
+           b = 2.5;
+         }
+         myX = myX+(int)(Math.random()*7)-a;
+         myY = myY+(int)(Math.random()*7)-b;
+     }
+     else{
+         myX = myX+(int)(Math.random()*7)-3;
+         myY = myY+(int)(Math.random()*7)-3;
+       }
    }
    void show()
    {
